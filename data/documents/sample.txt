@@ -1,0 +1,13 @@
+RAG (Retrieval-Augmented Generation) is a powerful technique in AI.
+It combines retrieval of relevant documents with generative language models.
+This system uses Sentence-BERT for embeddings and FAISS for fast vector search.
+Chunking documents into smaller overlapping pieces improves retrieval accuracy.
+Google Gemini or Claude 3.5 Sonnet can be used as the answering LLM.
+
+Vector embeddings convert text into high-dimensional vectors so that similar meanings are close together in vector space.
+FAISS is a library developed by Facebook that allows extremely fast similarity search over millions of vectors.
+BM25 is a classic keyword-based ranking algorithm that works well when exact terms matter.
+
+Hybrid retrieval combines dense vector search (semantic) with sparse keyword search (BM25) using score fusion.
+This usually gives better results than using either method alone.
+The final system will also include confidence scoring to flag uncertain answers for human review.

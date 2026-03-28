@@ -1,0 +1,47 @@
+[
+  {
+    "chunk_id": "sample.txt_chunk_0",
+    "text": "RAG (Retrieval-Augmented Generation) is a powerful technique in AI.\nIt combines retrieval of relevant documents with generative language models.\nThis system uses Sentence-BERT for embeddings and FAISS for fast vector search.\nChunking documents into smaller overlapping pieces improves retrieval accuracy.\nGoogle Gemini or Claude 3.5 Sonnet can be used as the answering LLM.\n\nVector embeddings convert text into high-dimensional vectors so that similar meanings are close together in vector space.",
+    "metadata": {
+      "filename": "sample.txt",
+      "file_path": "data\\documents\\sample.txt",
+      "file_type": ".txt",
+      "total_characters": 975,
+      "ingested_at": "2026-03-28T07:51:51.526251",
+      "chunk_index": 0,
+      "chunk_length": 496,
+      "start_char": 0,
+      "end_char": 496
+    }
+  },
+  {
+    "chunk_id": "sample.txt_chunk_1",
+    "text": "vert text into high-dimensional vectors so that similar meanings are close together in vector space.\nFAISS is a library developed by Facebook that allows extremely fast similarity search over millions of vectors.\nBM25 is a classic keyword-based ranking algorithm that works well when exact terms matter.\n\nHybrid retrieval combines dense vector search (semantic) with sparse keyword search (BM25) using score fusion.\nThis usually gives better results than using either method alone.",
+    "metadata": {
+      "filename": "sample.txt",
+      "file_path": "data\\documents\\sample.txt",
+      "file_type": ".txt",
+      "total_characters": 975,
+      "ingested_at": "2026-03-28T07:51:51.526251",
+      "chunk_index": 1,
+      "chunk_length": 481,
+      "start_char": 396,
+      "end_char": 877
+    }
+  },
+  {
+    "chunk_id": "sample.txt_chunk_2",
+    "text": "search (BM25) using score fusion.\nThis usually gives better results than using either method alone.\nThe final system will also include confidence scoring to flag uncertain answers for human review.",
+    "metadata": {
+      "filename": "sample.txt",
+      "file_path": "data\\documents\\sample.txt",
+      "file_type": ".txt",
+      "total_characters": 975,
+      "ingested_at": "2026-03-28T07:51:51.526251",
+      "chunk_index": 2,
+      "chunk_length": 197,
+      "start_char": 777,
+      "end_char": 1277
+    }
+  }
+]

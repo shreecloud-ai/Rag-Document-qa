@@ -1,0 +1,56 @@
+# =============================================
+# RAG Document Q&A System - Configuration File
+# =============================================
+
+# ------------------- Paths -------------------
+project_root: "."
+data_dir: "data"
+documents_dir: "data/documents"
+chunks_dir: "data/chunks"
+indexes_dir: "data/indexes"
+eval_dir: "data/eval"
+
+# ------------------- Chunking Settings -------------------
+chunk_size: 500          
+chunk_overlap: 100       
+min_chunk_length: 50     
+
+# ------------------- Embedding Settings -------------------
+embedding_model: "all-MiniLM-L6-v2"   
+embedding_dim: 384                    
+
+# ------------------- FAISS Settings -------------------
+faiss_index_type: "Flat"              
+faiss_metric: "L2"                    
+
+# ------------------- Retrieval Settings -------------------
+top_k: 5                              
+hybrid_alpha: 0.7                     
+
+# ------------------- BM25 Settings -------------------
+bm25_k1: 1.5
+bm25_b: 0.75
+
+# ------------------- Reranker Settings -------------------
+rerank_top_k: 10                      
+
+# ------------------- LLM Settings -------------------
+llm_provider: "gemini"                        # Options: gemini, anthropic, groq
+llm_model: "gemini-2.5-flash"                 # or gemini-2.5-pro if you have access
+llm_temperature: 0.0                          
+llm_max_tokens: 1000
+
+# ------------------- Confidence Scoring -------------------
+confidence_threshold: 0.65                    
+retrieval_weight: 0.4
+groundedness_weight: 0.4
+coverage_weight: 0.2
+
+# ------------------- API & Dashboard -------------------
+host: "127.0.0.1"
+port: 8000
+debug: true
+
+# ------------------- Evaluation -------------------
+eval_queries: 200
+hit_at_k: 3
