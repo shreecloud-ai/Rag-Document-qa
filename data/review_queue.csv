@@ -1,0 +1,3 @@
+timestamp,question,answer,confidence,flagged_reason,status
+2026-03-29T07:19:27.535957,Tell me about confidence scoring,I don't have enough information to answer this question confidently.,0.353,"Weak retrieval, Low groundedness (possible hallucination)",pending
+2026-03-29T07:19:27.682934,What is the capital of France?,The system uses confidence scoring to evaluate answer quality and flags low-confidence responses for human review.,0.629,Weak retrieval,pending
