@@ -1,0 +1,27 @@
+[
+  {
+    "query": "What is RAG and how does it work?",
+    "relevant_chunk_id": 0,
+    "expected_answer_keywords": ["retrieval", "augmented", "generation"]
+  },
+  {
+    "query": "What is FAISS used for?",
+    "relevant_chunk_id": 1,
+    "expected_answer_keywords": ["FAISS", "similarity", "vector", "Facebook"]
+  },
+  {
+    "query": "Explain hybrid retrieval in this system",
+    "relevant_chunk_id": 2,
+    "expected_answer_keywords": ["hybrid", "FAISS", "BM25", "fusion"]
+  },
+  {
+    "query": "What is Sentence-BERT?",
+    "relevant_chunk_id": 1,
+    "expected_answer_keywords": ["Sentence-BERT", "embeddings", "vector"]
+  },
+  {
+    "query": "What is cloud computing?",
+    "relevant_chunk_id": 3,
+    "expected_answer_keywords": ["cloud", "computing", "servers", "AWS"]
+  }
+]

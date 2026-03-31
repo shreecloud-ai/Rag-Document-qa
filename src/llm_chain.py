@@ -44,28 +44,38 @@ def format_context(retrieved_chunks: List[Dict]) -> str:
     for i, chunk in enumerate(retrieved_chunks, 1):
         context_parts.append(f"--- Source {i} ---\n{chunk['text']}\n")
     return "\n".join(context_parts)
-
 def create_rag_chain():
     def rag_chain(inputs):
         question = inputs["question"]
         retrieved_chunks = inputs["retrieved_chunks"]
+        
         context = format_context(retrieved_chunks)
         
         if USE_MOCK:
-            # Simulate realistic answer
-            if "RAG" in question:
-                answer = "RAG (Retrieval-Augmented Generation) combines retrieval of relevant document chunks with a generative LLM to produce accurate answers."
-            elif "FAISS" in question:
-                answer = "FAISS is a library for fast similarity search over vector embeddings."
-            elif "hybrid" in question.lower():
-                answer = "Hybrid retrieval combines FAISS (semantic) and BM25 (keyword) using Reciprocal Rank Fusion for better results."
+            if not retrieved_chunks:
+                answer = "I don't have any documents loaded yet. Please upload a document first."
             else:
-                answer = "The system uses confidence scoring to evaluate answer quality and flags low-confidence responses for human review."
-            
-            # Occasionally simulate "I don't know"
-            if random.random() < 0.2:
-                answer = "I don't have enough information to answer this question confidently."
+                # Use the top chunk as primary context
+                top_chunk = retrieved_chunks[0]["text"]
+                
+                if "RAG" in question or "retrieval" in question.lower():
+                    answer = "RAG (Retrieval-Augmented Generation) is a technique that retrieves relevant document chunks using hybrid search and then uses an LLM to generate accurate, grounded answers."
+                elif "FAISS" in question:
+                    answer = "FAISS is a library for fast similarity search over vector embeddings. It enables quick retrieval of semantically similar chunks."
+                elif "hybrid" in question.lower():
+                    answer = "Hybrid retrieval combines FAISS (semantic similarity) and BM25 (keyword matching) using Reciprocal Rank Fusion to get the best of both worlds."
+                elif "cloud computing" in question.lower():
+                    answer = "Cloud computing is the delivery of computing services over the internet. It includes servers, storage, databases, networking, software, and analytics from providers like AWS, Azure, and Google Cloud."
+                elif "Sentence-BERT" in question or "embedding" in question.lower():
+                    answer = "Sentence-BERT is used to convert text into dense vector embeddings so that semantically similar sentences are close in vector space."
+                else:
+                    answer = f"Based on the retrieved context: {top_chunk[:400]}..."
+                
+                # Occasionally admit uncertainty
+                if random.random() < 0.25:
+                    answer = "I don't have enough relevant information in the uploaded documents to answer this confidently."
         else:
+            # Real LLM path
             chain = prompt | llm | StrOutputParser()
             answer = chain.invoke({"context": context, "question": question})
         

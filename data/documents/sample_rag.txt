@@ -1,0 +1,23 @@
+Title: Introduction to Cloud Computing
+
+Cloud computing is the delivery of computing services such as servers, storage, databases, networking, software, and analytics over the internet. It allows users to access technology services without owning physical infrastructure.
+
+There are three main types of cloud services:
+1. Infrastructure as a Service (IaaS): Provides virtualized computing resources over the internet.
+2. Platform as a Service (PaaS): Offers hardware and software tools over the internet.
+3. Software as a Service (SaaS): Delivers software applications over the internet on a subscription basis.
+
+Major cloud providers include Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).
+
+Advantages of cloud computing:
+- Cost efficiency
+- Scalability
+- Flexibility
+- High availability
+
+Disadvantages:
+- Security concerns
+- Downtime risks
+- Limited control over infrastructure
+
+Cloud computing is widely used in industries such as healthcare, finance, education, and e-commerce.

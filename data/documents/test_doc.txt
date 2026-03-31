@@ -1,0 +1,15 @@
+Artificial Intelligence (AI) is the simulation of human intelligence in machines. It enables systems to learn, reason, and make decisions.
+
+Machine Learning (ML) is a subset of AI that allows computers to learn from data without being explicitly programmed. Common algorithms include linear regression, decision trees, and neural networks.
+
+Deep Learning is a specialized branch of ML that uses neural networks with multiple layers. It is widely used in image recognition, natural language processing, and speech recognition.
+
+Retrieval-Augmented Generation (RAG) is a technique that combines information retrieval with text generation. It retrieves relevant documents and uses them as context to generate accurate answers.
+
+Vector databases like FAISS and Pinecone are used to store embeddings and perform similarity search. Embeddings are numerical representations of text that capture semantic meaning.
+
+Reranking improves the quality of retrieved results by reordering them based on relevance. Models like cross-encoders are commonly used for reranking.
+
+Large Language Models (LLMs) such as GPT are capable of generating human-like text. They are used in chatbots, summarization, and code generation.
+
+Evaluation of RAG systems includes metrics like accuracy, relevance, and faithfulness. Confidence scores help determine how reliable an answer is.

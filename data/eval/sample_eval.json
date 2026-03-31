@@ -1,0 +1,17 @@
+[
+  {
+    "query": "What is RAG?",
+    "relevant_chunk_id": 0,
+    "retrieved_chunk_ids": [0, 1, 2]
+  },
+  {
+    "query": "What is FAISS used for?",
+    "relevant_chunk_id": 1,
+    "retrieved_chunk_ids": [1, 0, 2]
+  },
+  {
+    "query": "Explain hybrid retrieval",
+    "relevant_chunk_id": 2,
+    "retrieved_chunk_ids": [2, 1, 0]
+  }
+]

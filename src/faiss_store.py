@@ -46,14 +46,15 @@ def save_faiss_index(index: faiss.Index, index_name: str = "faiss_index.bin"):
     print(f"✅ FAISS index saved to: {index_path}")
     return index_path
 
-def load_faiss_index(index_name: str = "faiss_index.bin") -> faiss.Index:
-    """Load FAISS index from disk."""
+def load_faiss_index(index_name: str = "faiss_index.bin"):
     index_path = os.path.join(INDEX_DIR, index_name)
+
     if not os.path.exists(index_path):
         raise FileNotFoundError(f"FAISS index not found: {index_path}")
-    
+
     index = faiss.read_index(index_path)
     print(f"✅ FAISS index loaded with {index.ntotal} vectors")
+
     return index
 
 def search_faiss(index: faiss.Index, query_embedding: np.ndarray, top_k: int = 5) -> List[int]:

@@ -1,0 +1,47 @@
+[
+  {
+    "query": "What is RAG and how does it work?",
+    "relevant_chunk_id": 0,
+    "retrieved_chunk_ids": [
+      0,
+      2,
+      1
+    ]
+  },
+  {
+    "query": "What is FAISS used for?",
+    "relevant_chunk_id": 1,
+    "retrieved_chunk_ids": [
+      2,
+      0,
+      1
+    ]
+  },
+  {
+    "query": "Explain hybrid retrieval in this system",
+    "relevant_chunk_id": 2,
+    "retrieved_chunk_ids": [
+      2,
+      1,
+      0
+    ]
+  },
+  {
+    "query": "What is Sentence-BERT?",
+    "relevant_chunk_id": 1,
+    "retrieved_chunk_ids": [
+      2,
+      0,
+      1
+    ]
+  },
+  {
+    "query": "What is cloud computing?",
+    "relevant_chunk_id": 3,
+    "retrieved_chunk_ids": [
+      0,
+      2,
+      1
+    ]
+  }
+]

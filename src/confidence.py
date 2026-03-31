@@ -7,6 +7,8 @@ import re
 from typing import List, Dict, Any
 import yaml
 import os
+import csv
+from datetime import datetime
 
 # Load config
 config_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "configs", "config.yaml")
@@ -74,3 +76,26 @@ def calculate_confidence(retrieved_chunks: List[Dict], answer: str, query: str) 
             "coverage": round(coverage, 3)
         }
     }
+def log_to_review_queue(result: Dict[str, Any], question: str, answer: str):
+    """Log flagged answers to CSV for human review."""
+    review_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
+    os.makedirs(review_dir, exist_ok=True)
+    review_path = os.path.join(review_dir, "review_queue.csv")
+    
+    file_exists = os.path.exists(review_path)
+    
+    with open(review_path, "a", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        if not file_exists:
+            writer.writerow(["timestamp", "question", "answer", "confidence", "reason", "status"])
+        
+        writer.writerow([
+            datetime.now().isoformat(),
+            question,
+            answer[:500],           # truncate long answers
+            result["confidence"],
+            result["reason"],
+            "pending"
+        ])
+    
+    print(f"📝 Flagged answer logged to review queue → {review_path}")
