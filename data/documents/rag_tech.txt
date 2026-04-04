@@ -1,0 +1,5 @@
+RAG Technology
+Retrieval-Augmented Generation (RAG) is a technique that retrieves relevant document chunks before generating an answer with an LLM.
+It reduces hallucinations and grounds the response in real data.
+Key components: chunking, Sentence-BERT embeddings, FAISS vector search, BM25 keyword search, reranking, and confidence scoring.
+Hybrid retrieval (FAISS + BM25) usually performs better than using either alone.

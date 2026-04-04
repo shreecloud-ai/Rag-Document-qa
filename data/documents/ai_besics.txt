@@ -1,0 +1,4 @@
+Artificial Intelligence Basics
+Artificial Intelligence (AI) is the simulation of human intelligence in machines.
+It includes machine learning, natural language processing, computer vision, and reasoning.
+RAG is a popular method in modern AI to make answers more factual and reliable.

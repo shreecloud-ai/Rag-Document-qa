@@ -13,3 +13,9 @@ Reranking improves the quality of retrieved results by reordering them based on 
 Large Language Models (LLMs) such as GPT are capable of generating human-like text. They are used in chatbots, summarization, and code generation.
 
 Evaluation of RAG systems includes metrics like accuracy, relevance, and faithfulness. Confidence scores help determine how reliable an answer is.
+
+RAG Technology
+Retrieval-Augmented Generation (RAG) is an AI technique that improves LLM responses by retrieving relevant document chunks before generation.
+It reduces hallucinations and grounds answers in real data.
+Key components: chunking, embeddings (Sentence-BERT), vector search (FAISS), keyword search (BM25), and hybrid retrieval.
+Reranking with cross-encoders further improves relevance.

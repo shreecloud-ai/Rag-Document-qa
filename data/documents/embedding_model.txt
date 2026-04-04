@@ -1,0 +1,5 @@
+Embedding Models in RAG
+Sentence-BERT is widely used for generating sentence embeddings.
+It produces 384-dimensional vectors that capture semantic meaning.
+BGE models (like bge-base-en-v1.5) are also popular for better performance on retrieval tasks.
+Good embeddings are key to effective FAISS search.

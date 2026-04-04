@@ -1,0 +1,4 @@
+BM25 Algorithm
+BM25 is a bag-of-words ranking function used in information retrieval.
+It improves upon TF-IDF by incorporating document length normalization and term frequency saturation.
+In hybrid RAG systems, BM25 is used alongside dense vector search to capture exact keyword matches that semantic embeddings might miss.

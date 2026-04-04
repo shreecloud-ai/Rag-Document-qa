@@ -1,0 +1,6 @@
+IaaS vs SaaS
+IaaS (Infrastructure as a Service) provides virtualized computing resources over the internet (servers, storage, networking).
+Examples: AWS EC2, Azure Virtual Machines.
+SaaS (Software as a Service) delivers software applications over the internet on a subscription basis.
+Examples: Google Workspace, Microsoft Office 365, Salesforce.
+Difference: IaaS gives more control and responsibility to the user, while SaaS is fully managed by the provider.

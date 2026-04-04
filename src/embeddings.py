@@ -15,7 +15,7 @@ config_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "configs"
 with open(config_path, "r") as f:
     config = yaml.safe_load(f)
 
-EMBEDDING_MODEL = config["embedding_model"]
+EMBEDDING_MODEL = "all-MiniLM-L6-v2"   # Force consistent model
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 # Load the model once when the module is imported (efficient)

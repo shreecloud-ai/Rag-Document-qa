@@ -8,7 +8,7 @@ import os
 print("🚀 Starting full embedding test...\n")
 
 # 1. Ingest document
-doc_path = "data/documents/sample.txt"
+doc_path = "data/documents/sample_rag.txt"
 print("Step 1: Ingesting document...")
 ingested = ingest_document(doc_path)
 print(f"✅ Loaded: {ingested['metadata']['filename']} ({ingested['metadata']['total_characters']} chars)\n")

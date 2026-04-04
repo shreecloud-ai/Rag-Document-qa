@@ -1,47 +1,63 @@
-[
-  {
-    "query": "What is RAG and how does it work?",
-    "relevant_chunk_id": 0,
-    "retrieved_chunk_ids": [
-      0,
-      2,
-      1
-    ]
+{
+  "metrics": {
+    "hit_at_k": 0.7,
+    "mrr": 0.42499999999999993,
+    "total_queries": 20
   },
-  {
-    "query": "What is FAISS used for?",
-    "relevant_chunk_id": 1,
-    "retrieved_chunk_ids": [
-      2,
-      0,
-      1
-    ]
-  },
-  {
-    "query": "Explain hybrid retrieval in this system",
-    "relevant_chunk_id": 2,
-    "retrieved_chunk_ids": [
-      2,
-      1,
-      0
-    ]
-  },
-  {
-    "query": "What is Sentence-BERT?",
-    "relevant_chunk_id": 1,
-    "retrieved_chunk_ids": [
-      2,
-      0,
-      1
-    ]
-  },
-  {
-    "query": "What is cloud computing?",
-    "relevant_chunk_id": 3,
-    "retrieved_chunk_ids": [
-      0,
-      2,
-      1
-    ]
-  }
-]
+  "failures": [
+    {
+      "query": "What is cloud computing?",
+      "relevant_id": 3,
+      "retrieved": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "query": "What are advantages of cloud computing?",
+      "relevant_id": 3,
+      "retrieved": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "query": "What is artificial intelligence?",
+      "relevant_id": 4,
+      "retrieved": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "query": "Name some cloud providers",
+      "relevant_id": 3,
+      "retrieved": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "query": "What is the difference between IaaS and SaaS?",
+      "relevant_id": 3,
+      "retrieved": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "query": "Give an example of cloud computing service",
+      "relevant_id": 3,
+      "retrieved": [
+        0,
+        1,
+        2
+      ]
+    }
+  ]
+}

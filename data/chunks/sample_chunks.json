@@ -1,0 +1,47 @@
+[
+  {
+    "chunk_id": "sample_rag.txt_chunk_0",
+    "text": "Title: Introduction to Cloud Computing\n\nCloud computing is the delivery of computing services such as servers, storage, databases, networking, software, and analytics over the internet. It allows users to access technology services without owning physical infrastructure.\n\nThere are three main types of cloud services:\n1. Infrastructure as a Service (IaaS): Provides virtualized computing resources over the internet.\n2. Platform as a Service (PaaS): Offers hardware and software tools over the internet.\n3.",
+    "metadata": {
+      "filename": "sample_rag.txt",
+      "file_path": "data\\documents\\sample_rag.txt",
+      "file_type": ".txt",
+      "total_characters": 1010,
+      "ingested_at": "2026-04-04T16:32:05.572238",
+      "chunk_index": 0,
+      "chunk_length": 507,
+      "start_char": 0,
+      "end_char": 507
+    }
+  },
+  {
+    "chunk_id": "sample_rag.txt_chunk_1",
+    "text": "Provides virtualized computing resources over the internet.\n2. Platform as a Service (PaaS): Offers hardware and software tools over the internet.\n3. Software as a Service (SaaS): Delivers software applications over the internet on a subscription basis.\n\nMajor cloud providers include Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).",
+    "metadata": {
+      "filename": "sample_rag.txt",
+      "file_path": "data\\documents\\sample_rag.txt",
+      "file_type": ".txt",
+      "total_characters": 1010,
+      "ingested_at": "2026-04-04T16:32:05.572238",
+      "chunk_index": 1,
+      "chunk_length": 361,
+      "start_char": 357,
+      "end_char": 719
+    }
+  },
+  {
+    "chunk_id": "sample_rag.txt_chunk_2",
+    "text": "over the internet on a subscription basis.\n\nMajor cloud providers include Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).\n\nAdvantages of cloud computing:\n- Cost efficiency\n- Scalability\n- Flexibility\n- High availability\n\nDisadvantages:\n- Security concerns\n- Downtime risks\n- Limited control over infrastructure\n\nCloud computing is widely used in industries such as healthcare, finance, education, and e-commerce.",
+    "metadata": {
+      "filename": "sample_rag.txt",
+      "file_path": "data\\documents\\sample_rag.txt",
+      "file_type": ".txt",
+      "total_characters": 1010,
+      "ingested_at": "2026-04-04T16:32:05.572238",
+      "chunk_index": 2,
+      "chunk_length": 441,
+      "start_char": 569,
+      "end_char": 1169
+    }
+  }
+]

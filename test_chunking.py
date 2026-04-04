@@ -6,7 +6,7 @@ import os
 
 # 1. Ingest the document
 print("Step 1: Ingesting document...")
-doc_path = "data/documents/sample.txt"
+doc_path = "data/documents/sample_rag.txt"
 ingested = ingest_document(doc_path)
 
 print(f"✅ Loaded: {ingested['metadata']['filename']}")

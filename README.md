@@ -1,3 +1,85 @@
+# RAG Document Q&A Assistant
+
+A complete **Retrieval-Augmented Generation (RAG)** system that allows users to upload documents (PDF, TXT, DOCX), ask natural language questions, and receive accurate answers with confidence scores and source citations.
+
+## Features
+
+- Upload and index PDF, TXT, DOCX documents
+- Hybrid retrieval (FAISS semantic search + BM25 keyword search + cross-encoder reranker)
+- Confidence scoring with automatic flagging for human review
+- Interactive chat interface with source citations
+- Review queue for low-confidence answers
+- FastAPI backend + Streamlit frontend
+
+## Tech Stack
+
+- **Embeddings**: Sentence-BERT (`all-MiniLM-L6-v2`)
+- **Vector Search**: FAISS
+- **Keyword Search**: BM25
+- **Reranker**: cross-encoder/ms-marco-MiniLM-L-6-v2
+- **LLM**: Google Gemini (with mock mode for development)
+- **Backend**: FastAPI
+- **Frontend**: Streamlit
+
+## Project Structure
+rag-document-qa/
+├── data/
+│   ├── documents/          # Uploaded PDF, TXT, DOCX files
+│   ├── chunks/             # Processed chunks with embeddings
+│   ├── indexes/            # FAISS index
+│   └── review_queue.csv    # Flagged answers for human review
+├── src/                    # Core RAG pipeline
+├── api/                    # FastAPI backend
+├── dashboard/              # Streamlit frontend
+├── eval/                   # Evaluation scripts
+├── configs/config.yaml
+├── requirements.txt
+└── README.md
+
+## How to Run
+
+### 1. Start the FastAPI Backend
+```bash
+uvicorn api.main:app --reload --port 8000
+2. Start the Streamlit Dashboard (in a new terminal)
+Bashstreamlit run dashboard/app.py
+3. Open the Application
+
+Dashboard: http://localhost:8501
+API Docs: http://localhost:8000/docs
+
+### How to Use
+
+Go to the Chat tab
+Upload documents using the uploader in the sidebar or bottom section
+Click "Upload & Index"
+Ask questions in the chat box
+Check confidence score and expandable sources
+Go to Review Queue tab to handle flagged answers
+
+Current Performance
+
+Hit@3 ≈ 0.70
+MRR ≈ 0.52
+
+These metrics can be improved by adding more documents and fine-tuning chunking/retrieval parameters.
+Future Improvements
+
+Incremental indexing for faster uploads
+Real Gemini integration (when quota allows)
+Larger evaluation benchmark (200 queries)
+Docker deployment
+User authentication
+
+### Built With
+
+Python 3
+LangChain
+Sentence-Transformers
+FAISS
+rank-bm25
+FastAPI
+Streamlit
 # 🔍 RAG Document Q&A System
 
 > A production-ready Retrieval-Augmented Generation pipeline for intelligent document question-answering — featuring hybrid retrieval, confidence scoring, and a human review queue.

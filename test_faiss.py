@@ -23,7 +23,7 @@ if os.path.exists(chunks_path):
     chunks, embeddings = load_chunks_with_embeddings(chunks_path)
 else:
     print("Creating fresh chunks + embeddings...")
-    ingested = ingest_document("data/documents/sample.txt")
+    ingested = ingest_document("data/documents/sample_rag.txt")
     chunks = create_chunks(ingested['text'], ingested['metadata'])
     chunks = generate_embeddings_for_chunks(chunks)
     save_chunks_with_embeddings(chunks, "sample_chunks_final.json")

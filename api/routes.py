@@ -31,7 +31,7 @@ async def query(request: QueryRequest):
 
 @router.post("/ingest", response_model=IngestResponse)
 async def ingest_document(file: UploadFile = File(...)):
-    """Upload and index document. Clears previous index for clean start."""
+    """Upload and incrementally index a document (much faster)."""
     try:
         upload_dir = "data/documents"
         os.makedirs(upload_dir, exist_ok=True)
@@ -40,18 +40,18 @@ async def ingest_document(file: UploadFile = File(...)):
         with open(file_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
         
-        print(f"📄 Saved: {file.filename}")
+        print(f"📄 Saved uploaded file: {file.filename}")
 
-        # Reset index when uploading a new file (clean start)
+        # Use incremental indexer
         from src.index_manager import ingest_and_index_new_document
-        chunks_created = ingest_and_index_new_document(file_path, reset_index=True)
+        chunks_created = ingest_and_index_new_document(file_path)
 
         return IngestResponse(
-            message="Document uploaded and indexed successfully! Previous documents cleared.",
+            message="Document successfully processed and added to the search index!",
             filename=file.filename,
             chunks_created=chunks_created
         )
 
     except Exception as e:
-        print(f"❌ Error: {str(e)}")
+        print(f"❌ Ingestion error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))

@@ -1,5 +1,5 @@
 """
-Improved RAG Evaluation with Better Analysis
+RAG Evaluation with Failure Analysis (20 queries)
 """
 
 import sys
@@ -8,23 +8,18 @@ import json
 from src.pipeline import answer_question
 from eval.metrics import run_evaluation
 
-# Add project root to path
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(project_root)
 
-def run_full_evaluation():
-    print("🚀 Starting Improved RAG Evaluation...\n")
+def run_benchmark():
+    print("🚀 Starting RAG Evaluation (20 queries)...\n")
     
     eval_path = "data/eval/eval_set.json"
-    if not os.path.exists(eval_path):
-        print(f"❌ File not found: {eval_path}")
-        return
-    
     with open(eval_path, "r") as f:
         eval_data = json.load(f)
     
     results = []
-    print(f"Evaluating {len(eval_data)} queries...\n")
+    failures = []
     
     for i, item in enumerate(eval_data, 1):
         query = item["query"]
@@ -42,19 +37,24 @@ def run_full_evaluation():
             "retrieved_chunk_ids": retrieved_ids
         })
         
-        print(f"   Retrieved: {retrieved_ids} | Relevant: {relevant_id}\n")
+        if relevant_id not in retrieved_ids[:3]:
+            failures.append({
+                "query": query,
+                "relevant_id": relevant_id,
+                "retrieved": retrieved_ids
+            })
     
     metrics = run_evaluation(results)
     
-    # Save detailed results
+    print(f"\nFailure cases ({len(failures)} queries):")
+    for f in failures:
+        print(f"   - '{f['query']}' | Relevant: {f['relevant_id']} | Retrieved: {f['retrieved']}")
+    
     os.makedirs("eval/results", exist_ok=True)
     with open("eval/results/detailed_eval.json", "w") as f:
-        json.dump(results, f, indent=2)
+        json.dump({"metrics": metrics, "failures": failures}, f, indent=2)
     
-    print("\n📊 Summary:")
-    print(f"   Hit@3 : {metrics['hit_at_k']:.4f}")
-    print(f"   MRR   : {metrics['mrr']:.4f}")
-    print(f"   Results saved to eval/results/")
+    print("\n✅ Evaluation completed! Results saved.")
 
 if __name__ == "__main__":
-    run_full_evaluation()
+    run_benchmark()

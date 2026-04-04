@@ -1,0 +1,12 @@
+Advanced RAG Concepts
+Retrieval-Augmented Generation (RAG) combines retrieval and generation to produce more accurate LLM answers.
+It uses hybrid retrieval: FAISS for semantic similarity and BM25 for keyword matching.
+Reranking with cross-encoders improves the quality of top results.
+Confidence scoring evaluates retrieval strength, groundedness, and chunk coverage to flag uncertain answers for human review.
+Good chunking with overlap (e.g., 500 characters with 150 overlap) helps maintain context.
+
+Benefits of RAG
+RAG reduces hallucinations by grounding LLM answers in real document chunks.
+It improves factual accuracy and allows the system to cite sources.
+Hybrid retrieval (FAISS + BM25) + reranking gives better relevance than pure semantic or keyword search.
+Confidence scoring helps flag uncertain answers for human review.

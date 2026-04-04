@@ -20,7 +20,7 @@ def answer_question(question: str, show_details: bool = False) -> Dict[str, Any]
 
         # 1. Retrieval
         hybrid_results = hybrid_search(question, top_k=8)
-        reranked_chunks = rerank_chunks(question, hybrid_results, top_k=5)
+        reranked_chunks = rerank_chunks(question, hybrid_results, top_k=6)
 
         # 2. Generate answer
         llm_result = rag_chain({

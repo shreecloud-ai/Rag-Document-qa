@@ -1,0 +1,6 @@
+Cloud Computing
+Cloud computing is the delivery of computing services over the internet.
+It includes servers, storage, databases, networking, software, analytics, and intelligence.
+Major providers are Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).
+Advantages: cost efficiency, scalability, flexibility, high availability, disaster recovery.
+Challenges: data security, internet dependency, vendor lock-in.

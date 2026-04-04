@@ -11,10 +11,10 @@ indexes_dir: "data/indexes"
 eval_dir: "data/eval"
 
 # ------------------- Chunking Settings -------------------
-chunk_size: 500          
-chunk_overlap: 100       
-min_chunk_length: 50     
-
+chunk_size: 350
+chunk_overlap: 75
+hybrid_alpha: 0.5
+min_chunk_length: 50
 # ------------------- Embedding Settings -------------------
 embedding_model: "all-MiniLM-L6-v2"   
 embedding_dim: 384                    
@@ -24,7 +24,7 @@ faiss_index_type: "Flat"
 faiss_metric: "L2"                    
 
 # ------------------- Retrieval Settings -------------------
-top_k: 5                              
+top_k: 5                             
 hybrid_alpha: 0.7                     
 
 # ------------------- BM25 Settings -------------------
